@@ -2,6 +2,32 @@
 
 **Compare. Choose. Go.** An Expo + TypeScript app that compares public transport, cab, two-wheeler and carpool for trips in Pune, side by side, so you can weigh time against cost and choose for yourself. There is no backend or sign-in; search state, saved commutes and the profile live in memory.
 
+## About
+
+Getting around Pune usually means juggling several apps: one for the bus, one for the metro, one or two for cabs and bike taxis. Each shows only its own option, so comparing them means switching back and forth and guessing.
+
+TravelWise puts every way to make a trip on one screen. Enter where you're starting and where you're going, pick when you want to leave (now, later today or any future date) and it lays out four options:
+
+- **Public transport**: PMPML buses and the Pune Metro, with each step of the journey: where to walk, which bus to catch, which metro line and how many stops.
+- **Cab**: door-to-door, with a fare range that reflects traffic and peak hours.
+- **Two-wheeler**: own vehicle or bike taxi, usually the fastest through traffic.
+- **Carpool**: a shared ride with verified commuters, for less than a cab.
+
+Each option shows an estimated travel time and an honest fare *range* rather than a single number that will be wrong. Labels such as *Fastest*, *Cheapest*, *Most predictable* and *Comfortable* point out the trade-offs. TravelWise never decides for you; it makes the choice clear.
+
+It also fits your own habits: set your preferred modes, budget and maximum travel time, and results gently flag options that don't fit, without hiding any. Save the commutes you make every day and load them with one tap.
+
+### How it works
+
+- Places are looked up on **OpenStreetMap** (via Photon), biased towards Pune.
+- Road distance and traffic come from **TomTom** when a key is set; otherwise TravelWise estimates them.
+- The metro is planned on the **real Pune Metro network**: the Aqua Line (Vanaz–Ramwadi) and the Purple Line (PCMC–Swargate), with a change at District Court. It's suggested only when a station is within reach of both ends and it's faster than a direct bus. No more "take the metro" for trips the metro doesn't serve.
+- Fares follow simple, editable rules in one file (`constants/pricing.ts`), so they're easy to tune as real prices change.
+
+### Status
+
+TravelWise is a working prototype: there are no accounts and no booking, and fares are estimates. It runs in Expo Go, in the browser and as an installable Android app.
+
 ## Features
 
 - **Place search** with suggestions, biased to Pune ([Photon](https://photon.komoot.io), OpenStreetMap — free, no key).
